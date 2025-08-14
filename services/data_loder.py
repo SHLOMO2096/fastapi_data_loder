@@ -13,3 +13,4 @@ def lode_data():
     cursor.close()
     conn.close()
     return products
+
