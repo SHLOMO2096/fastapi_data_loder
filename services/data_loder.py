@@ -1,7 +1,7 @@
 import mysql.connector
 
 class DataLoder:
-    def lode_data():
+    def load_data():
         conn = mysql.connector.connect(
             host = "mysql",
             user = "shlomo",

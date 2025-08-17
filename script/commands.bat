@@ -3,7 +3,7 @@ oc new-app --name=mysql -e MYSQL_ROOT_PASSWORD=0000 -e MYSQL_DATABASE=products -
 
 oc set volumes deployment mysql --add --mount-path=/mypvc --name=mypvc --claim-name=mypvc --read-only=false --type=persistentVolumeClaim --claim-size=1Gi
 
-oc rsh mysql-65b5d688b7-h5b5x
+oc rsh mysql-797bdd7b6-hfddd
 
 mysql -u shlomo -p products
 
