@@ -6,10 +6,10 @@ class DataLoder:
             host = "mysql",
             user = "shlomo",
             password = "1234",
-            database = "namse",
+            database = "products",
         )
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM namse')
+        cursor.execute('SELECT * FROM names')
         products = cursor.fetchall()
         cursor.close()
         conn.close()
