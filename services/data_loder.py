@@ -9,7 +9,7 @@ class DataLoder:
             database = "products",
         )
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM names')
+        cursor.execute('SELECT * FROM names;')
         products = cursor.fetchall()
         cursor.close()
         conn.close()

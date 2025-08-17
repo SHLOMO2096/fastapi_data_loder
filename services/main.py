@@ -9,4 +9,4 @@ def root():
 
 @app.get("/products")
 def get_products():
-    return load_data()
+    return DataLoder.load_data()
