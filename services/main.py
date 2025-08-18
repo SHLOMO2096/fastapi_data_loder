@@ -7,6 +7,6 @@ app = FastAPI()
 def root():
     return {"message": "Hello FastAPI!"}
 
-@app.get("/products")
+@app.get("/names")
 def get_products():
     return DataLoder.load_data()

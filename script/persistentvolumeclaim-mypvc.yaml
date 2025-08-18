@@ -1,0 +1,54 @@
+﻿kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mypvc
+  namespace: shlomo2096-dev
+  uid: 4b942728-6a62-454c-93e9-d45023bb2878
+  resourceVersion: '2608963940'
+  creationTimestamp: '2025-08-17T12:59:40Z'
+  finalizers:
+    - kubernetes.io/pvc-protection
+  managedFields:
+    - manager: kube-scheduler
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-17T12:59:40Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+    - manager: kubectl-set
+      operation: Update
+      apiVersion: v1
+      time: '2025-08-17T12:59:40Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:spec':
+          'f:accessModes': {}
+          'f:resources':
+            'f:requests':
+              .: {}
+              'f:storage': {}
+          'f:volumeMode': {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: pvc-4b942728-6a62-454c-93e9-d45023bb2878
+  storageClassName: gp3
+  volumeMode: Filesystem
+status:
+  phase: Bound
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi

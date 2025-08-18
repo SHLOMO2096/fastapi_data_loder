@@ -1,0 +1,41 @@
+﻿kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql
+      apiVersion: apps/v1
+  labels:
+    app: mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: mysql
+  template:
+    metadata:
+      labels:
+        deployment: mysql
+    spec:
+      volumes:
+        - name: mypvc
+          persistentVolumeClaim:
+            claimName: mypvc
+      containers:
+          name: mysql
+          env:
+            - name: MYSQL_DATABASE
+              value: products
+            - name: MYSQL_PASSWORD
+              value: '1234'
+            - name: MYSQL_ROOT_PASSWORD
+              value: '0000'
+            - name: MYSQL_USER
+              value: shlomo
+          ports:
+            - containerPort: 3306
+              protocol: TCP
+          volumeMounts:
+            - name: mypvc
+              mountPath: /mypvc
+          image: 'image-registry.openshift-image-registry.svc:5000/openshift/mysql@sha256:c6edc9920c6038890d77d1daa135b7ae4a5a7fe2213b168dbc12311de0445791'
+
+

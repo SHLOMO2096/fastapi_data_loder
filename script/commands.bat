@@ -1,7 +1,7 @@
 
 oc new-app --name=mysql -e MYSQL_ROOT_PASSWORD=0000 -e MYSQL_DATABASE=products -e MYSQL_USER=shlomo -e MYSQL_PASSWORD=1234 mysql:8.0
 
-oc set volumes deployment mysql --add --mount-path=/mypvc --name=mypvc --claim-name=mypvc --read-only=false --type=persistentVolumeClaim --claim-size=1Gi
+oc set volumes deployment mysql --add --mount-path=/var/lib/mysql --name=mypvc --claim-name=mypvc --read-only=false --type=persistentVolumeClaim --claim-size=1Gi
 
 oc rsh mysql-797bdd7b6-hfddd
 
