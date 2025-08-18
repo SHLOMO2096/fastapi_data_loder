@@ -22,3 +22,12 @@ oc get service
 oc expose service service-fastapi
 
 oc get routes
+
+
+פקודות ליצירת פוד mongodb
+
+oc new-app  -e MONGODB_USER=shlomo  -e MONGODB_PASSWORD=1234  -e MONGODB_DATABASE=my_mongo -e MONGODB_ADMIN_PASSWORD=0000 mongodb/mongodb-community-server:7.0-ubi9
+oc set volumes deployment mongodb-community-server --add --mount-path=/data --name=mongodb --claim-name=mongodb --read-only=false --type=persistentVolumeClaim --claim-size=1Gi
+
+
+
